@@ -41,11 +41,13 @@ $(document).ready(function () {
     if (taskType === "homeTask") {
       homeTasks.push(new ToDoList.HomeTask(description, priority));
     } else if (taskType === "workTask") {
-      workTasks.push(new ToDoList.WorkTask(dueDate, description, priority, people.person));
+      workTasks.push(new ToDoList.WorkTask(dueDate, description, priority, person));
     } else {
-      hobyTasks.push(new ToDoList.HobbyTask(description));
+      hobbyTasks.push(new ToDoList.HobbyTask(description));
     }
     console.log(homeTasks);
+    console.log(workTasks);
+    console.log(hobbyTasks);
   });
 });
 
