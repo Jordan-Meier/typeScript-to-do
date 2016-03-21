@@ -3,18 +3,28 @@
 /// <reference path="to-do-listing-functions.ts" />
 
 $(document).ready(function () {
+  $('#taskForm').hide();
   var taskType;
-  $('#workTaskForm').hide();
-  $('#homeTaskForm').hide();
-  $('#hobbyTaskForm').hide();
   $('#type').change(function (){
     taskType = $('#type').val();
     if (taskType === "workTask") {
-      $('#workTaskForm').show();
+      $('#taskForm').show();
+      $('.description').show();
+      $('.priority').show();
+      $('.dueDate').show();
+      $('.person').show();
     } else if (taskType === "homeTask") {
-      $('#homeTaskForm').show();
+      $('#taskForm').show();
+      $('.description').show();
+      $('.priority').show();
+      $('.dueDate').hide();
+      $('.person').hide();
     } else {
-      $('#hobbyTaskForm').show();
+      $('#taskForm').show();
+      $('.description').show();
+      $('.priority').hide();
+      $('.dueDate').hide();
+      $('.person').hide();
     }
   });
 
@@ -35,6 +45,7 @@ $(document).ready(function () {
     } else {
       hobyTasks.push(new ToDoList.HobbyTask(description));
     }
+    console.log(homeTasks);
   });
 });
 
