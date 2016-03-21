@@ -11,23 +11,43 @@
       <h1>To Do List</h1><hr>
     </div>
     <div class="container">
-      <form id="">
-        <label for="description">Description:</label>
-        <input id="description" type="text"><br>
+      <form id="taskTypes">
         <label for="type">Task Type:</label>
         <select id="type">
-          <option value="">Home</option>
-          <option value="">Work</option>
-          <option value="">Hobby</option>
+          <option value="homeTask">Home</option>
+          <option id="workTask" value="workTask">Work</option>
+          <option value="hobbyTask">Hobby</option>
         </select><br>
+      </form>
+
+      <form id="workTaskForm">
+        <label for="description">Description:</label>
+        <input id="description" type="text"><br>
         <label for="priority">Priority:</label>
         <select id="priority">
-          <option value="">High</option>
-          <option value="">Medium</option>
-          <option value="">Low</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
         </select><br>
-        <button type="submit" class="btn-success">Add Task!</button>
+        <label for='dueDate'>Due Date:</label>
+        <select id='type'>
+          <option value='today'>Today</option>
+          <option value='tomorrow'>Tomorrow</option>
+          <option value='nextDay'>The Next Day</option>
+        </select><br>
+        <label for='person'>Assign task to:</label>
+        <select id='person'>
+          <option value='jordan'>Jordan</option>
+          <option value='thor'>Thor</option>
+          <option value='loki'>Loki</option>
+        </select><br>
+        <button type="button" id="addTask" class="btn-success">Add Task!</button>
       </form>
+    </div>
+    <div id="results" class="container">
+      <ul id="taskList">
+
+      </ul>
     </div>
   </body>
 </html>
