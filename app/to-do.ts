@@ -5,7 +5,7 @@ interface ITask {
   markDone(): void;
 }
 
-class Task {
+class Task implements ITask {
   done: boolean = false;
   constructor(public description: string, public priority: string) {}
   markDone() {
