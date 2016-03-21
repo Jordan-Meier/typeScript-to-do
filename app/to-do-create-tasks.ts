@@ -28,27 +28,40 @@ $(document).ready(function () {
     }
   });
 
-
   $('#addTask').click(function() {
+    taskType = $('#type').val();
     var description = $('#description').val();
     var priority = $('#priority').val();
     var person = $('#person').val();
     var dueDate = $('#dueDate').val();
-    var homeTasks = [];
-    var workTasks = [];
-    var hobbyTasks = [];
+    var people = ToDoList.people;
+    var tasks = [];
     if (taskType === "homeTask") {
-      var newHomeTask = homeTasks.push(new ToDoList.HomeTask(description, priority));
-      $('#homeTaskList').append('<h5>' + description + ': ' + priority + ' priority</h5>');
+      tasks.push(new ToDoList.HomeTask(description, priority));
+      // $('#homeTaskList').append('<h5>' + description + ': ' + priority + ' priority</h5>');
     } else if (taskType === "workTask") {
-      workTasks.push(new ToDoList.WorkTask(dueDate, description, priority, person));
-      $('#workTaskList').append('<h5>' + description + ': ' + priority + ' priority</h5>');
+      tasks.push(new ToDoList.WorkTask(dueDate, description, priority, people[person]));
+      // $('#workTaskList').append('<h5>' + description + ': ' + priority + ' priority</h5>');
     } else {
-      hobbyTasks.push(new ToDoList.HobbyTask(description));
-      $('#hobbyTaskList').append('<h5>' + description + '</h5>');
+      tasks.push(new ToDoList.HobbyTask(description));
+      // $('#hobbyTaskList').append('<h5>' + description + '</h5>');
     }
-    console.log(homeTasks);
-    console.log(workTasks);
-    console.log(hobbyTasks);
+
+    var thorTasks = ToDoList.describeTasksForPerson(people.thor, tasks);
+    console.log("Here are Thor's tasks: ");
+    for(var task of thorTasks){
+      $('#thorTaskList').append('<li>' + task + '</li>');
+    }
+    var lokiTasks = ToDoList.describeTasksForPerson(people.loki, tasks);
+    console.log("Here are Loki's tasks: ");
+    for(var task of lokiTasks){
+      $('#lokiTaskList').append('<li>' + task + '</li>');
+    }
+
+    var jordanTasks = ToDoList.describeTasksForPerson(people.jordan, tasks);
+    console.log("Here are Jordan's tasks: ");
+    for(var task of jordanTasks){
+      $('#jordanTaskList').append('<li>' + task + '</li>');
+    }
   });
 });
