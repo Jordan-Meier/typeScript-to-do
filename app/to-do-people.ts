@@ -18,7 +18,7 @@ module ToDoList {
   }
 
   export var people = {
-    "diane": diane,
+    "jordan": jordan,
     "thor": thor,
     "loki": loki,
   };
