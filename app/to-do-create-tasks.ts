@@ -29,7 +29,6 @@ $(document).ready(function () {
   });
 
 
-
   $('#addTask').click(function() {
     var description = $('#description').val();
     var priority = $('#priority').val();
@@ -39,53 +38,17 @@ $(document).ready(function () {
     var workTasks = [];
     var hobbyTasks = [];
     if (taskType === "homeTask") {
-      homeTasks.push(new ToDoList.HomeTask(description, priority));
+      var newHomeTask = homeTasks.push(new ToDoList.HomeTask(description, priority));
+      $('#homeTaskList').append('<h5>' + description + ': ' + priority + ' priority</h5>');
     } else if (taskType === "workTask") {
       workTasks.push(new ToDoList.WorkTask(dueDate, description, priority, person));
+      $('#workTaskList').append('<h5>' + description + ': ' + priority + ' priority</h5>');
     } else {
       hobbyTasks.push(new ToDoList.HobbyTask(description));
+      $('#hobbyTaskList').append('<h5>' + description + '</h5>');
     }
     console.log(homeTasks);
     console.log(workTasks);
     console.log(hobbyTasks);
   });
 });
-
-
-
-
-
-
-
-
-// var people = ToDoList.people;
-//
-// var tasks = [];
-// tasks.push(new ToDoList.HomeTask("Do the dishes.", "High"));
-// tasks.push(new ToDoList.HomeTask("Buy chocolate.", "Low", people.jordan));
-// tasks.push(new ToDoList.HomeTask("Wash the laundry.", "High"));
-//
-// tasks.push(new ToDoList.HobbyTask("Practice origami."));
-// tasks.push(new ToDoList.HobbyTask("Bake a pie."));
-//
-// var today = new Date();
-// var tomorrow = new Date();
-// tomorrow.setDate(today.getDate() + 1);
-// var nextDay = new Date();
-// nextDay.setDate(today.getDate() + 2);
-//
-// tasks.push(new ToDoList.WorkTask(tomorrow, "Go to meeting.", "Medium", people.thor));
-// tasks.push(new ToDoList.WorkTask(tomorrow, "Save the world.", "High", people.thor));
-// tasks.push(new ToDoList.WorkTask(tomorrow, "Buy a new shirt.", "Low", people.thor));
-// tasks.push(new ToDoList.WorkTask(nextDay, "Clean ceiling.", "Low", people.loki));
-//
-
-
-  // console.log(tasks);
-  //
-  //
-  // var thorTasks = ToDoList.describeTasksForPerson(people.thor, tasks);
-  // console.log("Here are Thor's tasks: ");
-  // for(var task of thorTasks) {
-  //   console.log(task);
-  // }
