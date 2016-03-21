@@ -1,14 +1,14 @@
-interface IPerson {
-  name: string;
-  email: string;
-}
-
 interface ITask {
   description: string;
   done: boolean;
   priority: string;
   markDone(): void;
   assignedTo?: IPerson;
+}
+
+interface IPerson {
+  name: string;
+  email: string;
 }
 
 class Task implements ITask {
