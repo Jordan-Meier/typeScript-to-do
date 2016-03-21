@@ -23,15 +23,17 @@ $(document).ready(function () {
   $('#addTask').click(function() {
     var description = $('#description').val();
     var priority = $('#priority').val();
+    var person = $('#person').val();
+    var dueDate = $('#dueDate').val();
     var homeTasks = [];
     var workTasks = [];
     var hobbyTasks = [];
     if (taskType === "homeTask") {
       homeTasks.push(new ToDoList.HomeTask(description, priority));
     } else if (taskType === "workTask") {
-      // workTasks.push(new ToDoList.WorkTask(tomorrow, description, priority, people.thor));
+      workTasks.push(new ToDoList.WorkTask(dueDate, description, priority, people.person));
     } else {
-
+      hobyTasks.push(new ToDoList.HobbyTask(description));
     }
   });
 });
