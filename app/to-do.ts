@@ -1,3 +1,10 @@
+interface ITask {
+  description: string;
+  done: boolean;
+  priority: string;
+  markDone(): void;
+}
+
 class Task {
   done: boolean = false;
   constructor(public description: string, public priority: string) {}
