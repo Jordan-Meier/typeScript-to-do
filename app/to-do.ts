@@ -19,7 +19,11 @@ class Task implements ITask {
   }
 }
 
-class HomeTask extends Task {}
+class HomeTask extends Task {
+  constructor(public description: string, public priority: string, public assignedTo?: IPerson){
+    super(description, priority);
+  }
+}
 
 class HobbyTask extends Task {
   constructor(public description: string) {
