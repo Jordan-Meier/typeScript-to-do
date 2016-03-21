@@ -43,7 +43,33 @@
         </select><br>
         <button type="button" id="addTask" class="btn-success">Add Task!</button>
       </form>
+
+      <form id="homeTaskForm">
+        <label for="description">Description:</label>
+        <input id="description" type="text"><br>
+        <label for="priority">Priority:</label>
+        <select id="priority">
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select><br>
+        <label for='person'>Assign task to:</label>
+        <select id='person'>
+          <option value='jordan'>Jordan</option>
+          <option value='thor'>Thor</option>
+          <option value='loki'>Loki</option>
+        </select><br>
+        <button type="button" id="addTask" class="btn-success">Add Task!</button>
+      </form>
+
+      <form id="hobbyTaskForm">
+        <label for="description">Description:</label>
+        <input id="description" type="text"><br>
+        <button type="button" id="addTask" class="btn-success">Add Task!</button>
+      </form>
     </div>
+
+
     <div id="results" class="container">
       <ul id="taskList">
 
