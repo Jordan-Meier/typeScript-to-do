@@ -21,51 +21,27 @@
         </select><br>
       </form>
 
-      <form id="workTaskForm">
-        <label for="description">Description:</label>
-        <input id="description" type="text"><br>
-        <label for="priority">Priority:</label>
-        <select id="priority">
+      <form id="taskForm">
+        <label class="description" for="description">Description:</label>
+        <input id="description" class="description" type="text"><br>
+        <label class="priority" for="priority">Priority:</label>
+        <select class="priority"  id="priority">
           <option value="high">High</option>
           <option value="medium">Medium</option>
           <option value="low">Low</option>
         </select><br>
-        <label for='dueDate'>Due Date:</label>
-        <select id='type'>
+        <label class="dueDate" for='dueDate'>Due Date:</label>
+        <select id='dueDate' class="dueDate">
           <option value='today'>Today</option>
           <option value='tomorrow'>Tomorrow</option>
           <option value='nextDay'>The Next Day</option>
         </select><br>
-        <label for='person'>Assign task to:</label>
-        <select id='person'>
+        <label class="person" for='person'>Assign task to:</label>
+        <select id='person' class="person">
           <option value='jordan'>Jordan</option>
           <option value='thor'>Thor</option>
           <option value='loki'>Loki</option>
         </select><br>
-        <button type="button" id="addTask" class="btn-success">Add Task!</button>
-      </form>
-
-      <form id="homeTaskForm">
-        <label for="description">Description:</label>
-        <input id="description" type="text"><br>
-        <label for="priority">Priority:</label>
-        <select id="priority">
-          <option value="high">High</option>
-          <option value="medium">Medium</option>
-          <option value="low">Low</option>
-        </select><br>
-        <label for='person'>Assign task to:</label>
-        <select id='person'>
-          <option value='jordan'>Jordan</option>
-          <option value='thor'>Thor</option>
-          <option value='loki'>Loki</option>
-        </select><br>
-        <button type="button" id="addTask" class="btn-success">Add Task!</button>
-      </form>
-
-      <form id="hobbyTaskForm">
-        <label for="description">Description:</label>
-        <input id="description" type="text"><br>
         <button type="button" id="addTask" class="btn-success">Add Task!</button>
       </form>
     </div>
